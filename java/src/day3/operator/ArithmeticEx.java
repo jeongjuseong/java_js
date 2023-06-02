@@ -14,6 +14,7 @@ public class ArithmeticEx {
 		System.out.println(ch);
 		int num2 = 3;
 		num2 = (int)(num2 + 4.0);
+		
 	}
 
 }
