@@ -22,10 +22,6 @@ public class NumberEx {
 			System.out.println(num1 +1);
 		}
 		
-		
-		
-		
-		
 		sc.close();
 	}
 
