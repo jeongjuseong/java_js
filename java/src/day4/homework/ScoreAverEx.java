@@ -15,7 +15,8 @@ public class ScoreAverEx {
 		int engsc2 = sc.nextInt();
 		int mathsc3 = sc.nextInt();
 		
-		double average = (korsc1 + engsc2 + mathsc3) / 3;
+		
+		double average = (korsc1 + engsc2 + mathsc3) / 3; //(double 3.0으로 형변환도 가능)
 		System.out.println("해당 평균 성적은 " + average + "입니다.");
 		
 		
