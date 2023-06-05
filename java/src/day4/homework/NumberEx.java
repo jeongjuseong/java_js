@@ -13,14 +13,17 @@ public class NumberEx {
 		int num;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("숫자를 입력하세요 : ");
-		int num1 = sc.nextInt();
+		num = sc.nextInt();
 		
-		if(num1 % 2 == 0) {
-			System.out.println(num1 /2);
+		if(num % 2 == 0) {
+			num = num / 2;
+			// num /= 2;
+				
+		}else{
+			num += 1;
 			
-		}else if(num1 % 2 != 0) {
-			System.out.println(num1 +1);
 		}
+		System.out.println(num);
 		
 		sc.close();
 	}
