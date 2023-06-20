@@ -1,8 +1,5 @@
 package day12.practice;
 
-import lombok.Data;
-
-@Data
 public class Word{
 	//멤버 변수
 	private String title;

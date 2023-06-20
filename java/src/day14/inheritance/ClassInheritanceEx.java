@@ -58,6 +58,10 @@ class SmartPhone extends Phone{
 	public void take() {
 		camera.take();
 	}
+	public char[] getNum() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	public SmartPhone() {
 		//부모 클래스의 생성자가 호출
 		//super()를 이용하여 부모 클래스의 생성자를 직접호출하지 않으면
