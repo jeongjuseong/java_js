@@ -61,12 +61,14 @@ public class InstancePolymorphismEx {
 		}//모든제품의 전원을 켬 
 		for(HomeAppliances homeAppliance : homeAppliances) {
 			remocon.turnOn(homeAppliance); 	
-		}//모든 라디오 전원을
-		
+		}//모든 라디오 전원을 끔
+		System.out.println("===================");
 		for(HomeAppliances homeAppliance : homeAppliances) {
-			//라디오로 다운캐스팅이 가능한 객체만 끔 -> 라디오만 
+			//라디오로  다운캐스팅이 가능한 객체만 끔 -> 라디오만 
 			if(homeAppliance instanceof Radio) {
-			remocon.turnOff(homeAppliance); 	
+				remocon.turnOff(homeAppliance); //다운 캐스팅이 아님.
+				Radio radio = (Radio)homeAppliance;//다운캐스팅
+				System.out.println(radio.frequency);
 			}
 		}
 		
