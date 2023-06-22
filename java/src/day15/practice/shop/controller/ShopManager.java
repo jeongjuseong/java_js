@@ -1,13 +1,12 @@
 package day15.practice.shop.controller;
-
 import java.util.Scanner;
-
 import day15.practice.shop.vo.Customer;
 import day15.practice.shop.vo.Product;
 import day15.practice.shop.vo.Sales;
+import day17.interfaceex.RunInterface;
 
+public class ShopManager implements RunInterface {
 
-public class ShopManager {
 	private Scanner sc = new Scanner(System.in);
 	private Product list[] = new Product[10];//제품 리스트
 	private int count = 0;//저장된 제품 개수
@@ -16,8 +15,8 @@ public class ShopManager {
 	private Sales salesHistory[] = new Sales[100];//판매 기록
 	private int salesCount;//기록된 판매수
 	private int totalPrice;//매출 금액
-
-	public void run() {
+	
+	public void run1() {
 		System.out.println("프로그램 시작!!");
 		
 		int menu = -1;
@@ -74,19 +73,13 @@ public class ShopManager {
 			System.out.println("잘못된 메뉴!");
 		}
 	}
-
 	private void registerCustomer() {
-		// TODO Auto-generated method stub
-		Customer customer = new Customer("홍길동", "010-1234-5678");
-		customer.print();
-		customer = new Customer("임꺽정", "010-1111-5555");
-		customer.print();
 		//고객 정보(이름, 전화번호)를 입력
 		System.out.print("이름 : ");
 		String name = sc.next();
 		System.out.print("번호 : ");
 		String phoneNumber = sc.next();
-
+		
 		//고객을 등록(고객 리스트에)
 		//이미 등록된 전화번호이면 등록을 X
 		for(int i = 0; i < customerCount ; i++) {
@@ -104,18 +97,15 @@ public class ShopManager {
 		customerList[customerCount] = new Customer(name, phoneNumber);
 		customerCount++;
 	}
-
 	private void printSales() {
-		// TODO Auto-generated method stub
 		//매출 내역 출력
 		for(int i =0; i<salesCount; i++) {
 			salesHistory[i].print();
 		}
-
+		
 		//누적 매출역 출력
 		System.out.println("누적 매출액 : " + totalPrice);
 	}
-
 	//제품을 검색해서 조회하는 메서드
 	private void printProduct() {
 		//검색할 제품을 입력
@@ -202,9 +192,8 @@ public class ShopManager {
 		}
 		return -1;
 	}
-
+	
 	private void sell() {
-		// TODO Auto-generated method stub
 		//제품명 입력
 		System.out.print("제품명 : ");
 		sc.nextLine();
@@ -215,7 +204,6 @@ public class ShopManager {
 		//고객 정보 입력
 		System.out.print("번호 : ");
 		String phoneNumber = sc.next();
-
 		//있는 제품인지 확인
 		int index = indexOf(name);
 		if(index < 0) {
@@ -226,34 +214,33 @@ public class ShopManager {
 			System.out.println("제품 수량 오류!");
 			return;
 		}
-
+		
 		//있는 고객인지 확인
 		int customerIndex = indexOfCustomer(phoneNumber);
 		if(customerIndex < 0) {
 			System.out.println("전화번호 오류!");
 			return;
 		}
-
+				
 		//판매 내역에 추가
 		//제품 정보
 		//복사 생성자를 이용해서 제품 정보를 복사(깊은 복사)
 		Product product = new Product(list[index]);
 		product.setAmount(amount);
-
+		
 		//고객 정보
 		Customer customer = customerList[customerIndex];
-
+		
 		Sales sales = new Sales(customer,product);
 		salesHistory[salesCount++] = sales;
-
+		
 		//판매된 개수만큼 제고량에서 빼줘야함.
 		list[index].release(amount);
-
+		
 		//매출금액을 추가
 		totalPrice += sales.getTotalPrice();
-
+		
 	}
-
 	private int indexOfCustomer(String phoneNumber) {
 		for(int i = 0; i<customerCount; i++) {
 			//고객의 번호가 같으면
@@ -263,4 +250,10 @@ public class ShopManager {
 		}
 		return -1;
 	}
+
+
+public void run() {
+	// TODO Auto-generated method stub
+	
+}
 }
