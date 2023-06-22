@@ -32,9 +32,9 @@ public class InterfaceEx {
 	 *   구현 클래스인 ShopManager, VocabularyNoteController의 객체가
 	 *   와서 프로그램을 실행할 수 있다. 
 	 */
-	public static void run(ShopManager shopManager) {
+	public static void run(RunInterface program) {
 		//프로그램 실행
-		((RunInterface) shopManager).run();
+		program.run();
 	}
 }
 
@@ -63,5 +63,3 @@ class Run implements RunInterface, Stop{
 		System.out.println("Program Stop!");
 	}
 }
-
-
