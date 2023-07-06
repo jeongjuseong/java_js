@@ -15,7 +15,7 @@ public class Book implements Serializable {
 	private boolean loan;//대출 여부
 
 	public String toString() {
-		return "도서번호 : " + num + "\n" +
+		return 	"도서번호 : " + num + "\n" +
 				"도서제목 : " + title + "\n" +
 				"도서저자 : " + author + "\n" +
 				"ISBN   : " + isbn;
