@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>datelist 태그 예제</title>
+</head>
+<body>
+<!-- 
+	datalist
+	- input태그와 함께 사용하여 select 태그와 비슷한 결과를 나타낼때 사용
+	- option 태그와 함께 사용
+	- input 태그에 list 속성 값으로 datalist의 아이디명을 입력해줌.
+	- 직접 select 태그처럼 선택가능, 검색을통해 자동완성 가능
+ -->
+ <form action="">
+	<input type="text" list="data_list">
+	<datalist id="data_list">
+		<option>남성</option>
+		<option>여성</option>
+	</datalist>
+	<input type="submit" value="전송">
+
+
+ </form>
+</body>
+</html>
