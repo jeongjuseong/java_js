@@ -10,6 +10,7 @@
   - UPDATE 이벤트에는 수정되기전 데이터는 OLD로, 수정된 데이터는 NEW로 접근할 수 있다. 
   - OLD.속성명, NEW.속성명 
 - 이벤트가 발생된 데이터는 수정할 수 없다. 
+
 DROP TRIGGER IF EXISTS 트리거명;
 DELIMITER //
 CREATE TRIGGER 트리거명 트리거시간 이벤트명 ON 테이블명 
@@ -18,6 +19,7 @@ BEGIN
 //구현
 END //
 DELIMITER ;
+
 트리거시간 : BEFORE | AFTER 
 이벤트명 : INSERT | UPDATE | DELETE
 */
