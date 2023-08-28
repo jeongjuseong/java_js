@@ -1,7 +1,9 @@
 package kr.kh.app.controller;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -9,14 +11,10 @@ import kr.kh.app.service.BoardService;
 import kr.kh.app.service.BoardServiceImp;
 import kr.kh.app.vo.BoardVO;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
 public class List extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private BoardService boardService = new BoardServiceImp();
+    private BoardService boardService = new BoardServiceImp();
     public List() {
-
         super();
     }
 

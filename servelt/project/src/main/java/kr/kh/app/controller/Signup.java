@@ -11,7 +11,7 @@ import kr.kh.app.service.MemberServiceImp;
 import kr.kh.app.vo.MemberVO;
 
 /**
- * Servelt implementation class Signup
+ * Servlet implementation class Singup
  */
 public class Signup extends HttpServlet {
 	private static final long serialVersionUID = 1L;
